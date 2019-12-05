@@ -3,18 +3,18 @@ import { useEffect } from 'react'
 
 
 
-const userDarkMode  = (key, initialValue) =>{
-    const [someValue, setSomeValue] = useLocalStorage(key, initialValue);
+const useDarkMode  = (key, initialValue) =>{
+    const [darkMode, setDarkMode] = useLocalStorage(key, initialValue);
 
     useEffect(() => {
-        if (someValue){
+        if (darkMode){
             document.body.add('dark-mode')
         }else{
             document.body.remove('dark-mode')
         }
-    }, [someValue]);
+    }, [darkMode]);
 
-    return[someValue, setSomeValue];
+    return[darkMode, setDarkMode];
 }
 
-export default userDarkMode;
+export default useDarkMode;
